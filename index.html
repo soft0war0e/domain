@@ -3,402 +3,157 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Neuralia - AI-Powered Medical Solutions</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <title>Neuralia - AI Medical Solutions</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --primary: #2C3E50;
-            --secondary: #3498DB;
-            --accent: #E74C3C;
-            --light: #ECF0F1;
-            --dark: #2C3E50;
-        }
-
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
         body {
-            line-height: 1.6;
-            color: var(--dark);
-        }
-
-        /* Navbar Styles */
-        .navbar {
-            background: var(--primary);
-            padding: 1rem 2rem;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            transition: all 0.3s ease;
-        }
-
-        .navbar.scrolled {
-            background: rgba(44, 62, 80, 0.95);
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-
-        .navbar-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .logo {
-            color: white;
-            font-size: 1.8rem;
-            font-weight: bold;
-            text-decoration: none;
-        }
-
-        .logo span {
-            color: var(--secondary);
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-        }
-
-        .nav-links a {
-            color: white;
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s ease;
-        }
-
-        .nav-links a:hover {
-            color: var(--secondary);
-        }
-
-        /* Hero Section */
-        .hero {
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(135deg, #1a2a3a 0%, #2c3e50 100%);
             height: 100vh;
-            background: linear-gradient(rgba(44, 62, 80, 0.8), rgba(44, 62, 80, 0.8)),
-                        url('/api/placeholder/1920/1080') center/cover;
             display: flex;
             align-items: center;
             justify-content: center;
-            text-align: center;
             color: white;
-            padding: 0 1rem;
-        }
-
-        .hero-content {
-            max-width: 800px;
-        }
-
-        .hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .hero p {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
-        }
-
-        .cta-button {
-            display: inline-block;
-            padding: 1rem 2rem;
-            background: var(--secondary);
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: transform 0.3s ease;
-        }
-
-        .cta-button:hover {
-            transform: translateY(-3px);
-        }
-
-        /* Solutions Section */
-        .solutions {
-            padding: 5rem 2rem;
-            background: var(--light);
-        }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-
-        .solutions-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .solution-card {
-            background: white;
-            padding: 2rem;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease;
-        }
-
-        .solution-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .solution-icon {
-            font-size: 2.5rem;
-            color: var(--secondary);
-            margin-bottom: 1rem;
-        }
-
-        /* Features Section */
-        .features {
-            padding: 5rem 2rem;
-            background: white;
-        }
-
-        .features-container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .feature {
-            display: flex;
-            align-items: center;
-            margin-bottom: 3rem;
-            gap: 2rem;
-        }
-
-        .feature-content {
-            flex: 1;
-        }
-
-        .feature-image {
-            flex: 1;
-            border-radius: 10px;
+            position: relative;
             overflow: hidden;
         }
 
-        /* Contact Section */
-        .contact {
-            padding: 5rem 2rem;
-            background: var(--primary);
-            color: white;
-        }
-
-        .contact-container {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .contact-form {
-            display: grid;
-            gap: 1rem;
-        }
-
-        .form-group {
-            display: grid;
-            gap: 0.5rem;
-        }
-
-        input, textarea {
-            padding: 0.8rem;
-            border: none;
-            border-radius: 5px;
-        }
-
-        button {
-            padding: 1rem;
-            background: var(--secondary);
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background 0.3s ease;
-        }
-
-        button:hover {
-            background: #2980b9;
-        }
-
-        /* Footer */
-        footer {
-            background: var(--dark);
-            color: white;
-            padding: 2rem;
+        .hero {
             text-align: center;
+            padding: 2rem;
+            position: relative;
+            z-index: 2;
         }
 
-        .social-links {
+        .logo {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 4.5rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(120deg, #3498db, #2ecc71);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+
+        .title {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+            opacity: 0.9;
+        }
+
+        .status {
+            margin-top: 3rem;
+            font-size: 1.2rem;
             display: flex;
+            align-items: center;
             justify-content: center;
             gap: 1rem;
-            margin-top: 1rem;
         }
 
-        .social-links a {
-            color: white;
-            font-size: 1.5rem;
-            transition: color 0.3s ease;
+        .gear {
+            animation: spin 4s linear infinite;
+            color: #3498db;
         }
 
-        .social-links a:hover {
-            color: var(--secondary);
+        .building {
+            opacity: 0.8;
         }
 
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
+        .coming-soon {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 1.1rem;
+            opacity: 0.7;
+            letter-spacing: 2px;
+        }
 
-            .hero h1 {
-                font-size: 2.5rem;
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 10px rgba(52, 152, 219, 0.5),
+                           0 0 20px rgba(52, 152, 219, 0.3);
             }
+            to {
+                text-shadow: 0 0 15px rgba(52, 152, 219, 0.8),
+                           0 0 30px rgba(52, 152, 219, 0.5);
+            }
+        }
 
-            .feature {
-                flex-direction: column;
-                text-align: center;
-            }
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        /* Particle effect */
+        .particles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            opacity: 0.3;
+            pointer-events: none;
+        }
+
+        .particle {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: #3498db;
+            border-radius: 50%;
         }
     </style>
 </head>
 <body>
-    <nav class="navbar">
-        <div class="navbar-content">
-            <a href="#" class="logo">Neura<span>lia</span></a>
-            <div class="nav-links">
-                <a href="#solutions">Solutions</a>
-                <a href="#features">Features</a>
-                <a href="#contact">Contact</a>
-            </div>
+    <div class="particles" id="particles"></div>
+    <div class="hero">
+        <h1 class="logo">NEURALIA</h1>
+        <h2 class="title">Transforming Healthcare<br>with AI</h2>
+        <p class="subtitle">Leveraging cutting-edge artificial intelligence to revolutionize medical diagnostics and patient care</p>
+        <div class="status">
+            <i class="fas fa-cog fa-2x gear"></i>
+            <span class="building">Building the future of healthcare...</span>
         </div>
-    </nav>
+        <div class="coming-soon">COMING SOON</div>
+    </div>
 
-    <section class="hero">
-        <div class="hero-content" data-aos="fade-up">
-            <h1>Transforming Healthcare with AI</h1>
-            <p>Leveraging cutting-edge artificial intelligence to revolutionize medical diagnostics and patient care</p>
-            <a href="#contact" class="cta-button">Get Started</a>
-        </div>
-    </section>
-
-    <section id="solutions" class="solutions">
-        <h2 class="section-title" data-aos="fade-up">Our Solutions</h2>
-        <div class="solutions-grid">
-            <div class="solution-card" data-aos="fade-up">
-                <i class="fas fa-brain solution-icon"></i>
-                <h3>AI-Powered Radiology</h3>
-                <p>Advanced image recognition for accurate and rapid diagnosis of medical imaging, including X-rays, MRIs, and CT scans.</p>
-            </div>
-            <div class="solution-card" data-aos="fade-up" data-aos-delay="100">
-                <i class="fas fa-pills solution-icon"></i>
-                <h3>Smart Prescription Analysis</h3>
-                <p>Automated prescription verification and drug interaction checking using state-of-the-art natural language processing.</p>
-            </div>
-            <div class="solution-card" data-aos="fade-up" data-aos-delay="200">
-                <i class="fas fa-dna solution-icon"></i>
-                <h3>Genetic Analysis</h3>
-                <p>Pattern recognition in genetic data to identify potential health risks and personalized treatment options.</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="features" class="features">
-        <div class="features-container">
-            <h2 class="section-title" data-aos="fade-up">Key Features</h2>
-            <div class="feature" data-aos="fade-right">
-                <div class="feature-content">
-                    <h3>Advanced Pattern Recognition</h3>
-                    <p>Our AI models are trained on vast medical datasets to identify patterns and anomalies with unprecedented accuracy.</p>
-                </div>
-                <div class="feature-image">
-                    <img src="/api/placeholder/600/400" alt="AI Pattern Recognition" style="width: 100%; height: auto;">
-                </div>
-            </div>
-            <div class="feature" data-aos="fade-left">
-                <div class="feature-image">
-                    <img src="/api/placeholder/600/400" alt="Real-time Analysis" style="width: 100%; height: auto;">
-                </div>
-                <div class="feature-content">
-                    <h3>Real-time Analysis</h3>
-                    <p>Get instant results and insights from our AI-powered analysis tools, helping you make faster and more informed decisions.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="contact" class="contact">
-        <div class="contact-container">
-            <h2 class="section-title" data-aos="fade-up">Contact Us</h2>
-            <form class="contact-form" data-aos="fade-up">
-                <div class="form-group">
-                    <label for="name">Name</label>
-                    <input type="text" id="name" required>
-                </div>
-                <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" required>
-                </div>
-                <div class="form-group">
-                    <label for="message">Message</label>
-                    <textarea id="message" rows="5" required></textarea>
-                </div>
-                <button type="submit">Send Message</button>
-            </form>
-        </div>
-    </section>
-
-    <footer>
-        <p>&copy; 2024 Neuralia. All rights reserved.</p>
-        <div class="social-links">
-            <a href="#"><i class="fab fa-linkedin"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
-            <a href="#"><i class="fab fa-facebook"></i></a>
-        </div>
-    </footer>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <script>
-        // Initialize AOS (Animate On Scroll)
-        AOS.init({
-            duration: 1000,
-            once: true
-        });
+        // Create particle effect
+        const particlesContainer = document.getElementById('particles');
+        const particleCount = 50;
 
-        // Navbar scroll effect
-        window.addEventListener('scroll', () => {
-            const navbar = document.querySelector('.navbar');
-            if (window.scrollY > 50) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
-            }
-        });
-
-        // Smooth scroll for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-
-        // Form submission handling
-        const form = document.querySelector('.contact-form');
-        form.addEventListener('submit', (e) => {
-            e.preventDefault();
-            // Add your form submission logic here
-            alert('Thank you for your message! We will get back to you soon.');
-            form.reset();
-        });
+        for (let i = 0; i < particleCount; i++) {
+            const particle = document.createElement('div');
+            particle.className = 'particle';
+            
+            // Random position
+            particle.style.left = Math.random() * 100 + '%';
+            particle.style.top = Math.random() * 100 + '%';
+            
+            // Random animation
+            const duration = 3 + Math.random() * 5;
+            const delay = Math.random() * 2;
+            
+            particle.style.animation = `float ${duration}s ${delay}s infinite linear`;
+            
+            particlesContainer.appendChild(particle);
+        }
     </script>
 </body>
 </html>
