@@ -118,6 +118,31 @@
             background: #3498db;
             border-radius: 50%;
         }
+        .contact-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.8rem 1.5rem;
+    background: rgba(52, 152, 219, 0.2);
+    border: 2px solid #3498db;
+    border-radius: 30px;
+    color: white;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(5px);
+    margin-bottom: 2rem;
+}
+
+.contact-button:hover {
+    background: rgba(52, 152, 219, 0.4);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3);
+}
+
+.contact-button i {
+    font-size: 1.2rem;
+}
     </style>
 </head>
 <body>
@@ -126,6 +151,10 @@
         <h1 class="logo">NEURALIA</h1>
         <h2 class="title">Transforming Healthcare<br>with AI</h2>
         <p class="subtitle">Levraging the latest generative AI technologies to improve healthcare</p>
+        <a href="mailto:neuralia@gmail.com" class="contact-button">
+    <i class="fas fa-envelope"></i>
+    Contact Us
+</a>
         <div class="status">
             <i class="fas fa-cog fa-2x gear"></i>
             <span class="building">COMING SOON...</span>
